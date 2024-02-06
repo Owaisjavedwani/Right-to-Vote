@@ -1,0 +1,790 @@
+<% layout('./layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center">Please fill out this form</h1>
+        <div class="col-6 offset-3">
+            <form action="/mainpage" method="POST">
+               
+                <div class="mb-3">
+                   <label class="form-label" for="email">Enter your Email</label>
+                    <input class="form-control" type="email" id="name" placeholder="Your email" name="email"
+                        value='<%=currentUser.username%>' readonly>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="branch">Select your branch</label>
+                    <select class="form-control" name="branch" id="branch" onchange="setSection()">
+                        <option value="" selected disabled>choose one</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="IS">IS</option>
+                    </select>
+
+                </div>
+                <section style="display: flex; justify-content: flex-start;">
+                    <div id="cseStu" style="display: none;" class="mb-3">
+                        <label class="form-label" for="candidate">select candidate</label>
+                        <select class="form-control" name="candidate" id="CSE">
+                            <option value="" selected disabled>choose one</option>
+                            <option value="AADITYA MARIA"> AADITYA MARIA</option>
+                            <option value="AAGNEY SINGH"> AAGNEY SINGH</option>
+                            <option value="AATREYEE MUKHERJEE"> AATREYEE MUKHERJEE</option>
+                            <option value="ACHARYA ATHARVA SANTOSH"> ACHARYA ATHARVA SANTOSH</option>
+                            <option value="AKANSHA MEHROTRA"> AKANSHA MEHROTRA</option>
+                            <option value="AKASH M"> AKASH M</option>
+                            <option value="AKASH V"> AKASH V</option>
+                            <option value="AKSHATA MANJUNATH NAIK"> AKSHATA MANJUNATH NAIK</option>
+                            <option value="AKSHITH R"> AKSHITH R</option>
+                            <option value="AKUL JAISWAL"> AKUL JAISWAL</option>
+                            <option value="AMBADAS B"> AMBADAS B</option>
+                            <option value="AMIT GUPTA"> AMIT GUPTA</option>
+                            <option value="ANEESH PUNICHITHAYA"> ANEESH PUNICHITHAYA</option>
+                            <option value="ANIKA SINGH"> ANIKA SINGH</option>
+                            <option value="ANIKSHA S"> ANIKSHA S</option>
+                            <option value="ANIRUDH MULLANGI"> ANIRUDH MULLANGI</option>
+                            <option value="ANKITH S"> ANKITH S</option>
+                            <option value="ANSHA PRASHANTH"> ANSHA PRASHANTH</option>
+                            <option value="ANSHUMAAN CHANDRA"> ANSHUMAAN CHANDRA</option>
+                            <option value="ANUSHREE HARRISH"> ANUSHREE HARRISH</option>
+                            <option value="ARAVIND SIDDHARTH R"> ARAVIND SIDDHARTH R</option>
+                            <option value="ARNAV PURUSHOTAM"> ARNAV PURUSHOTAM</option>
+                            <option value="ARNAV SHARMA"> ARNAV SHARMA</option>
+                            <option value="ARYAN"> ARYAN</option>
+                            <option value="ASHISH CHANNAPPA HARAKUNI"> ASHISH CHANNAPPA HARAKUNI</option>
+                            <option value="AYUSH KUMAR"> AYUSH KUMAR</option>
+                            <option value="B V HARSHITH"> B V HARSHITH</option>
+                            <option value="BALAM UJWAL REDDY"> BALAM UJWAL REDDY</option>
+                            <option value="BHARGAV S PATIL"> BHARGAV S PATIL</option>
+                            <option value="BHARGAVA G Y"> BHARGAVA G Y</option>
+                            <option value="BHARTI SHARMA"> BHARTI SHARMA</option>
+                            <option value="BHUVAN G"> BHUVAN G</option>
+                            <option value="CHERRISHA U SHETTY"> CHERRISHA U SHETTY</option>
+                            <option value="CHETHAN KUMAR K"> CHETHAN KUMAR K</option>
+                            <option value="CHINMAY GARG"> CHINMAY GARG</option>
+                            <option value="CHIRAG MANJESHWAR"> CHIRAG MANJESHWAR</option>
+                            <option value="DARSHAN B HUBBLY"> DARSHAN B HUBBLY</option>
+                            <option value="DEEPT AGARWAL"> DEEPT AGARWAL</option>
+                            <option value="DEVARALA MANORADH YADAV"> DEVARALA MANORADH YADAV</option>
+                            <option value="DEVSUMAN M SHETTY"> DEVSUMAN M SHETTY</option>
+                            <option value="DHANUSH R"> DHANUSH R</option>
+                            <option value="DHAVAN B NAIK"> DHAVAN B NAIK</option>
+                            <option value="DINESH KUMAR G"> DINESH KUMAR G</option>
+                            <option value="DISHA P"> DISHA P</option>
+                            <option value="EKTHA KARTHIK"> EKTHA KARTHIK</option>
+                            <option value="ESHA KHATRI"> ESHA KHATRI</option>
+                            <option value="FARAH SAMREEN F"> FARAH SAMREEN F</option>
+                            <option value="FARHAN JAVEED"> FARHAN JAVEED</option>
+                            <option value="GAGAN D"> GAGAN D</option>
+                            <option value="GIRIDHAR K R"> GIRIDHAR K R</option>
+                            <option value="GOHIT TYAGI"> GOHIT TYAGI</option>
+                            <option value="H VIDYASAGAR"> H VIDYASAGAR</option>
+                            <option value="HARISHA G"> HARISHA G</option>
+                            <option value="HARSIT KUMAR"> HARSIT KUMAR</option>
+                            <option value="HEMAMALA M N"> HEMAMALA M N</option>
+                            <option value="HIMANSHU RAJ"> HIMANSHU RAJ</option>
+                            <option value="HRUTHIK NAYAK B S"> HRUTHIK NAYAK B S</option>
+                            <option value="IMADH AJAZ BANDAY"> IMADH AJAZ BANDAY</option>
+                            <option value="INCHARA C"> INCHARA C</option>
+                            <option value="ISHITA RAY"> ISHITA RAY</option>
+                            <option value="JAI SHANKAR K S"> JAI SHANKAR K S</option>
+                            <option value="JAYAM MOUNEASH"> JAYAM MOUNEASH</option>
+                            <option value="JYOTIRADITYA SINGH BAGHEL"> JYOTIRADITYA SINGH BAGHEL</option>
+                            <option value="K ADITYA ARVIND"> K ADITYA ARVIND</option>
+                            <option value="K YASASWINI"> K YASASWINI</option>
+                            <option value="KANKANALA APOORVA"> KANKANALA APOORVA</option>
+                            <option value="KANKSHIT PRAKASH BHOJANE"> KANKSHIT PRAKASH BHOJANE</option>
+                            <option value="KARAN YADAV"> KARAN YADAV</option>
+                            <option value="KEERTHAN S GOWDA"> KEERTHAN S GOWDA</option>
+                            <option value="KEERTHANA N P"> KEERTHANA N P</option>
+                            <option value="KESHAV SOMANI"> KESHAV SOMANI</option>
+                            <option value="KOSHAL S GOYAL"> KOSHAL S GOYAL</option>
+                            <option value="KOTTURU AMARNATH"> KOTTURU AMARNATH</option>
+                            <option value="KRIPAKARA M N"> KRIPAKARA M N</option>
+                            <option value="KRISH R SAKRIYA"> KRISH R SAKRIYA</option>
+                            <option value="KUSHAL C"> KUSHAL C</option>
+                            <option value="LOKESH R"> LOKESH R</option>
+                            <option value="M D SURAJ KUMAR"> M D SURAJ KUMAR</option>
+                            <option value="M UDAYA RAJ"> M UDAYA RAJ</option>
+                            <option value="MALATESH SANGAMESH MANTUR"> MALATESH SANGAMESH MANTUR</option>
+                            <option value="MANOJ HOWALE S"> MANOJ HOWALE S</option>
+                            <option value="MANSI V JAIN"> MANSI V JAIN</option>
+                            <option value="MEENAKSHI PANDEY"> MEENAKSHI PANDEY</option>
+                            <option value="MEHUL TEJ"> MEHUL TEJ</option>
+                            <option value="MOHAMMED ABDUL QAYYUM"> MOHAMMED ABDUL QAYYUM</option>
+                            <option value="MRINALI GOWDA"> MRINALI GOWDA</option>
+                            <option value="MUKESH KUMAR N V"> MUKESH KUMAR N V</option>
+                            <option value="N VARUN"> N VARUN</option>
+                            <option value="NAGARAJ SUNAGAR"> NAGARAJ SUNAGAR</option>
+                            <option value="NAGARAJ VASUDEV HALATTI"> NAGARAJ VASUDEV HALATTI</option>
+                            <option value="NAMAN VARSHNEY"> NAMAN VARSHNEY</option>
+                            <option value="NANDINI KHASTAGIR">NANDINI KHASTAGIR</option>
+                            <option value="NEHA R"> NEHA R</option>
+                            <option value="NIHAL T S"> NIHAL T S</option>
+                            <option value="NIKHIL SRIKANTH"> NIKHIL SRIKANTH</option>
+                            <option value="NIRANJAN V HONNUNGAR"> NIRANJAN V HONNUNGAR</option>
+                            <option value="NIRMAY SANTOSH MALLA"> NIRMAY SANTOSH MALLA</option>
+                            <option value="NISHA P"> NISHA P</option>
+                            <option value="NITHIN B S"> NITHIN B S</option>
+                            <option value="OM BHANDANKAR"> OM BHANDANKAR</option>
+                            <option value="PADMANJALI A"> PADMANJALI A</option>
+
+                            <option value="PARVTHAREDDY SAI DHRUV REDDY"> PARVTHAREDDY SAI DHRUV REDDY</option>
+                            <option value="PAVITHRA H R"> PAVITHRA H R</option>
+                            <option value="PRAJJWAL YADAV"> PRAJJWAL YADAV</option>
+                            <option value="PRAJWAL BHAT"> PRAJWAL BHAT</option>
+                            <option value="PRAJWAL PATIL"> PRAJWAL PATIL</option>
+                            <option value="PRANAV KAUSHIK N G"> PRANAV KAUSHIK N G</option>
+                            <option value="PRASHANT R JOSHI"> PRASHANT R JOSHI</option>
+                            <option value="PRATEEK GUPTA"> PRATEEK GUPTA</option>
+                            <option value="PRATHVI P PUTHRAN"> PRATHVI P PUTHRAN</option>
+                            <option value="PREETAM"> PREETAM</option>
+                            <option value="PREETHAM KOLLI"> PREETHAM KOLLI</option>
+                            <option value="PREM M GOWDA"> PREM M GOWDA</option>
+                            <option value="PUJITH B S"> PUJITH B S</option>
+                            <option value="R DHANUSH"> R DHANUSH</option>
+                            <option value="R S VARUN"> R S VARUN</option>
+                            <option value="RAHUL P"> RAHUL P</option>
+                            <option value="RAHUL RAJ"> RAHUL RAJ</option>
+                            <option value="RAKESH B N"> RAKESH B N</option>
+                            <option value="RAKESH JADHAV"> RAKESH JADHAV</option>
+                            <option value="RAKSHITH R"> RAKSHITH R</option>
+                            <option value="RISHIV NARANG"> RISHIV NARANG</option>
+                            <option value="RITEESH A"> RITEESH A</option>
+                            <option value="RITHESH M RAO"> RITHESH M RAO</option>
+                            <option value="ROHIT AGRAWAL"> ROHIT AGRAWAL</option>
+                            <option value="ROHIT KUMAR"> ROHIT KUMAR</option>
+                            <option value="ROHIT MAHENDRAKAR"> ROHIT MAHENDRAKAR</option>
+                            <option value="RONIT BANGARD"> RONIT BANGARD</option>
+                            <option value="ROSHAN"> ROSHAN</option>
+                            <option value="ROSHAN C S"> ROSHAN C S</option>
+                            <option value="S KAUSTUBH RAO"> S KAUSTUBH RAO</option>
+                            <option value="S POOJA IYER"> S POOJA IYER</option>
+                            <option value="S SANJITH"> S SANJITH</option>
+                            <option value="S SWAROOP BHARADWAJ"> S SWAROOP BHARADWAJ</option>
+                            <option value="SAI GANESH S"> SAI GANESH S</option>
+                            <option value="SAI PRANAV R"> SAI PRANAV R</option>
+                            <option value="SAKSHI SHAHI"> SAKSHI SHAHI</option>
+                            <option value="SAKSHI SUNIL HANAMSHETTI"> SAKSHI SUNIL HANAMSHETTI</option>
+                            <option value="SAMHITHA D"> SAMHITHA D</option>
+                            <option value="SANSKAR SHAH"> SANSKAR SHAH</option>
+                            <option value="SAYAN SAHA"> SAYAN SAHA</option>
+                            <option value="SHAKTHI SRI HARAN A"> SHAKTHI SRI HARAN A</option>
+                            <option value="SHARWARI PRAKASH M"> SHARWARI PRAKASH M</option>
+                            <option value="SHASHANK B"> SHASHANK B</option>
+                            <option value="SHASHANKA  G"> SHASHANKA G</option>
+                            <option value="SHASHVAT KUMAR RAI"> SHASHVAT KUMAR RAI</option>
+                            <option value="SHATAKSHI UPADHYAYA"> SHATAKSHI UPADHYAYA</option>
+                            <option value="SHINE POLABADI"> SHINE POLABADI</option>
+                            <option value="SHIVAM CHOPRA"> SHIVAM CHOPRA</option>
+                            <option value="SHRADDHA PRASAD KHANAPUR"> SHRADDHA PRASAD KHANAPUR</option>
+                            <option value="SHREEYA D L"> SHREEYA D L</option>
+                            <option value="SHREYAS CHOLKE"> SHREYAS CHOLKE</option>
+                            <option value="SHREYAS J"> SHREYAS J</option>
+                            <option value="SHREYAS M S"> SHREYAS M S</option>
+                            <option value="SHUBHAM POTADAR"> SHUBHAM POTADAR</option>
+                            <option value="SHUBHAN S BHAT"> SHUBHAN S BHAT</option>
+                            <option value="SINGAREDDY VIVEKANANDA REDDY"> SINGAREDDY VIVEKANANDA REDDY</option>
+                            <option value="SIRI PRAHLAD"> SIRI PRAHLAD</option>
+                            <option value="SPOORTHI UDUPA"> SPOORTHI UDUPA</option>
+                            <option value="SRI DEVI K P NAIK"> SRI DEVI K P NAIK</option>
+                            <option value="SUDHESH"> SUDHESH</option>
+                            <option value="SUNIL P"> SUNIL P</option>
+                            <option value="SUPRIYA SURESH CHAVAN"> SUPRIYA SURESH CHAVAN</option>
+                            <option value="SUSHANTH SOMA"> SUSHANTH SOMA</option>
+                            <option value="SWATI A FIRANGI">SWATI A FIRANGI</option>
+                            <option value="SYED AYMAN AHMED">SYED AYMAN AHMED</option>
+                            <option value="TAMMINANA BHAVYASRI">TAMMINANA BHAVYASRI</option>
+                            <option value="TANMAY SINHA">TANMAY SINHA</option>
+                            <option value="TARANNUM S">TARANNUM S</option>
+                            <option value="TAUKSIK ANIL KUMAR">TAUKSIK ANIL KUMAR</option>
+                            <option value="TOSHIN FELIX I">TOSHIN FELIX I</option>
+                            <option value="TUSHAR B T">TUSHAR B T</option>
+                            <option value="TUSHAR SHARMA">TUSHAR SHARMA</option>
+                            <option value="UMANG GOEL">UMANG GOEL</option>
+                            <option value="UTKARSH">UTKARSH</option>
+                            <option value="V ASMA ANJUM">V ASMA ANJUM</option>
+                            <option value="VAISHALI KATHARIYA">VAISHALI KATHARIYA</option>
+                            <option value="VALMIKA G">VALMIKA G</option>
+                            <option value="VARUN CHAHAL">VARUN CHAHAL</option>
+                            <option value="VARUN URS M S">VARUN URS M S</option>
+                            <option value="VENKATA SATWIK POTULA">VENKATA SATWIK POTULA</option>
+                            <option value="VIBHA VENKATESH SHANBHAG">VIBHA VENKATESH SHANBHAG</option>
+                            <option value="VIDHAAN APPAJI">VIDHAAN APPAJI</option>
+                            <option value="VIGNESH V">VIGNESH V</option>
+                            <option value="VIJAYA VERMA">VIJAYA VERMA</option>
+                            <option value="VINAY KULKARNI">VINAY KULKARNI</option>
+                            <option value="VINAYAK Y BAJANTRI">VINAYAK Y BAJANTRI</option>
+                            <option value="VISHNU KUMAR">VISHNU KUMAR</option>
+                            <option value="VISHNU V P">VISHNU V P</option>
+                            <option value="VUNDAVALLI SUMA">VUNDAVALLI SUMA</option>
+                            <option value="ADITYA  BASAVARAJ NAGATHAN"> ADITYA BASAVARAJ NAGATHAN</option>
+                            <option value="MANIKANTHA GADA"> MANIKANTHA GADA </option>
+                            <option value="AFIFAH KHAN MOHAMMED AJMAL KHAN"> AFIFAH KHAN MOHAMMED AJMAL KHAN</option>
+                            <option value="AFRAH MAHMUD"> AFRAH MAHMUD </option>
+                            <option value="AKSHITHA BALAJI KITHIGANA"> AKSHITHA BALAJI KITHIGANA </option>
+                            <option value="ANAND MAHATO">ANAND MAHATO </option>
+                            <option value="CHIRAG G BHARADWAJ"> CHIRAG G BHARADWAJ </option>
+                            <option value="CHIRAG MAHAVEER CHIVATE"> CHIRAG MAHAVEER CHIVATE </option>
+                            <option value="DHANASHRI SURESH SHANBHAG"> DHANASHRI SURESH SHANBHAG</option>
+                            <option value="GYANESH YADAV"> GYANESH YADAV </option>
+                            <option value="JAYPRAKASH JAISWAL"> JAYPRAKASH JAISWAL </option>
+                            <option value="KUMAR MANGALAM"> KUMAR MANGALAM </option>
+                            <option value="LAASYA HOSADURGA"> LAASYA HOSADURGA </option>
+                            <option value="LESTYN CALIX MORAS"> LESTYN CALIX MORAS </option>
+                            <option value="MANASA DANDA ANIL KUMAR">MANASA DANDA ANIL KUMAR</option>
+                            <option value="MANSHI MAHATO"> MANSHI MAHATO </option>
+                            <option value="OMAR ABDULLA SHERIEF"> OMAR ABDULLA SHERIEF </option>
+                            <option value="PRAGUN ASHOK"> PRAGUN ASHOK </option>
+                            <option value="PRANAV MADHUKUMAR A PILLAI">PRANAV MADHUKUMAR A PILLAI</option>
+                            <option value="RAGHAV BHARDWAJ"> RAGHAV BHARDWAJ</option>
+                            <option value="SAMEECHA SUDHEER"> SAMEECHA SUDHEER </option>
+                            <option value="SARA REHMAN"> SARA REHMAN </option>
+                            <option value="SHARATH S">SHARATH S </option>
+                            <option value="SHRUTI DASAMANDAM"> SHRUTI DASAMANDAM </option>
+                            <option value="SREENATH MOOTHEDATH"> SREENATH MOOTHEDATH </option>
+                            <option value="SUMEDH MULIMANI"> SUMEDH MULIMANI </option>
+                            <option value="UTSAV BOSE"> UTSAV BOSE </option>
+                            <option value="VIDHU SAMVARTHA PRAKASH"> VIDHU SAMVARTHA PRAKASH </option>
+                            <option value="VIRAJ CHOWDARAPU"> VIRAJ CHOWDARAPU </option>
+
+
+                        </select>
+                        <div class="valid-feedba">
+                            Good job!
+                        </div>
+                    </div>
+                    <div id="eceStu" style="display: none;" class="mb-3">
+                        <label class="form-label" for="candidate">select candidate</label>
+                        <select name="candidate" id="ECE" class="form-control">
+                            <option value="" selected disabled>choose one</option>
+
+                           <option value="A. J. ILAYA BHARATHI">A. J. ILAYA BHARATHI</option>
+    <option value="A V VAMSHI KRISHNA">A V VAMSHI KRISHNA</option>
+    <option value="AADITYA BALAKRISHNA">AADITYA BALAKRISHNA</option>
+    <option value="AARUSHI ARUN SINGH">AARUSHI ARUN SINGH</option>
+    <option value="ABHAY SURYA R">ABHAY SURYA R</option>
+    <option value="ABHILASH">ABHILASH</option>
+    <option value="ABHINAV JAIN">ABHINAV JAIN</option>
+    <option value="ABHINAV N KULKARNI">ABHINAV N KULKARNI</option>
+    <option value="ABHISHEK.R">ABHISHEK.R</option>
+    <option value="ACHYUTH KUMAR">ACHYUTH KUMAR</option>
+    <option value="ADARSH NAIKODE">ADARSH NAIKODE</option>
+    <option value="ADITYA ANAND">ADITYA ANAND</option>
+    <option value="AKASH B KADAHALLI">AKASH B KADAHALLI</option>
+    <option value="AKSHAY PRAKASH">AKSHAY PRAKASH</option>
+    <option value="AMITH S">AMITH S</option>
+    <option value="AMOGH H">AMOGH H</option>
+    <option value="AMULYA K">AMULYA K</option>
+    <option value="AMULYA M S">AMULYA M S</option>
+    <option value="ANKITH GANIGA">ANKITH GANIGA</option>
+    <option value="ANKITHA S">ANKITHA S</option>
+    <option value="ANUSHKA P">ANUSHKA P</option>
+    <option value="ARKEIS M C B">ARKEIS M C B</option>
+    <option value="ARUN D G">ARUN D G</option>
+    <option value="ASAVARI ARUN HANGAL">ASAVARI ARUN HANGAL</option>
+    <option value="ASHWIN P K">ASHWIN P K</option>
+    <option value="AYUSH KUMAR">AYUSH KUMAR</option>
+    <option value="AYUSH SHETTY">AYUSH SHETTY</option>
+    <option value="B P SWATHI">B P SWATHI</option>
+    <option value="BHARATH N">BHARATH N</option>
+    <option value="BHARATHKUMAR A">BHARATHKUMAR A</option>
+    <option value="BHARDWAJ BHAT">BHARDWAJ BHAT</option>
+    <option value="BHOOMIKA P">BHOOMIKA P</option>
+    <option value="BINDUSHREE B S.">BINDUSHREE B S.</option>
+    <option value="CHAITANYA DEEPAK VOTOTE">CHAITANYA DEEPAK VOTOTE</option>
+    <option value="CHANDANA A S">CHANDANA A S</option>
+    <option value="CHIRAG S">CHIRAG S</option>
+    <option value=" CHITKALA S M"> CHITKALA S M</option>
+    <option value="DARSHAN M">DARSHAN M</option>
+    <option value="DEVARAJE GOWDA H C">DEVARAJE GOWDA H C</option>
+    <option value="DHANWANTH R GOWDA">DHANWANTH R GOWDA</option>
+    <option value="DINEEP S">DINEEP S</option>
+    <option value="DIVYA SHREE K V">DIVYA SHREE K V</option>
+    <option value="DIVYA SHREE TALA">DIVYA SHREE TALA</option>
+    <option value="DUSHYANT DADHICH">DUSHYANT DADHICH</option>
+    <option value="E Tanya">E Tanya</option>
+    <option value="GAJULA MOHAN SAI NITHIN">GAJULA MOHAN SAI NITHIN</option>
+    <option value="GANESH S VENKATI">GANESH S VENKATI</option>
+    <option value="GEETHANJALI P">GEETHANJALI P</option>
+    <option value="HARSH SHRINIVAS PATIL">HARSH SHRINIVAS PATIL</option>
+    <option value="HARSHA B J">HARSHA B J</option>
+    <option value="HARSHITH P">HARSHITH P</option>
+    <option value="HARSHITHA JAMPALA">HARSHITHA JAMPALA</option>
+    <option value="HARSHITHA RANA">HARSHITHA RANA</option>
+    <option value="HIDANGMAYUM RAHUL DEV SHARMA">HIDANGMAYUM RAHUL DEV SHARMA</option>
+    <option value="HIMASHRI A MASTHI">HIMASHRI A MASTHI</option>
+    <option value="HRIDAY SACHDEV">HRIDAY SACHDEV</option>
+    <option value="HRUTHICK P">HRUTHICK P</option>
+    <option value="HUBBAN ADNAN">HUBBAN ADNAN</option>
+    <option value="JAIDEEP A HEGWAD">JAIDEEP A HEGWAD</option>
+    <option value="JAYANTH NAIDU P J">JAYANTH NAIDU P J</option>
+    <option value="K R SAADHANA">K R SAADHANA</option>
+    <option value="KADAM JEE">KADAM JEE</option>
+    <option value="KARTHIK B S">KARTHIK B S</option>
+    <option value="KARTHIK M">KARTHIK M</option>
+    <option value="KARTHIK MUTHA">KARTHIK MUTHA</option>
+    <option value="KARTHIK RAMESH">KARTHIK RAMESH</option>
+    <option value="KAVYA SINGH">KAVYA SINGH</option>
+    <option value="KEERTHANA JAYAPRAKASH">KEERTHANA JAYAPRAKASH</option>
+    <option value="KISHORE M">KISHORE M</option>
+    <option value="KSHAMA U MARATHE">KSHAMA U MARATHE</option>
+    <option value="KUMAR SHUBHAM">KUMAR SHUBHAM</option>
+    <option value="LABDHI KUMAR CHORDIA">LABDHI KUMAR CHORDIA</option>
+    <option value="LAVANYA H K">LAVANYA H K</option>
+    <option value="LIKHITH P REDDY">LIKHITH P REDDY</option>
+    <option value="LIKITH SATHYANARAYAN">LIKITH SATHYANARAYAN</option>
+    <option value="LISHA T P">LISHA T P</option>
+    <option value="M BALACHANDRA">M BALACHANDRA</option>
+    <option value="M GAGAN">M GAGAN</option>
+    <option value="M SHRIYA PAI">M SHRIYA PAI</option>
+    <option value="MAHENDRA NAYAK">MAHENDRA NAYAK</option>
+    <option value="MANMITH VINAYAK RANE">MANMITH VINAYAK RANE</option>
+    <option value="MANOJ R">MANOJ R</option>
+    <option value="MANUSH AR">MANUSH AR</option>
+    <option value="MOKSHITH D">MOKSHITH D</option>
+    <option value="N NANDITHA">N NANDITHA</option>
+    <option value="NACHIKETA KUMAR">NACHIKETA KUMAR</option>
+    <option value="NAYAN RAJ CHOUDHARY">NAYAN RAJ CHOUDHARY</option>
+    <option value="NAYANTARA K KUMAR">NAYANTARA K KUMAR</option>
+    <option value="NIHAL I AHMED">NIHAL I AHMED</option>
+    <option value="NIHAR AJIT">NIHAR AJIT</option>
+    <option value="NIHARIKA JAIN PN">NIHARIKA JAIN PN</option>
+    <option value="NISARGA M S">NISARGA M S</option>
+    <option value="NITIN VARADARAJ">NITIN VARADARAJ</option>
+    <option value="OWAIS JAVED">OWAIS JAVED</option>
+    <option value="PALLA SAI DINESH">PALLA SAI DINESH</option>
+    <option value="PAVAN S MURTHY">PAVAN S MURTHY</option>
+    <option value="PAVITHRA D">PAVITHRA D</option>
+    <option value="PRADEEP D">PRADEEP D</option>
+    <option value="PRAJEET KULKARNI">PRAJEET KULKARNI</option>
+    <option value="PRAJWAL GOWDA G S">PRAJWAL GOWDA G S</option>
+    <option value="PRAJWAL N">PRAJWAL N</option>
+    <option value="PRANAV K S">PRANAV K S</option>
+    <option value="PRANAV KIRAN PANDIT">PRANAV KIRAN PANDIT</option>
+    <option value="PRANAV PRAMOD DESHPANDE">PRANAV PRAMOD DESHPANDE</option>
+    <option value="PRATHEEK ACHARYA">PRATHEEK ACHARYA</option>
+    <option value="PRATYUSH KUMAR">PRATYUSH KUMAR</option>
+    <option value="PRAVEEN">PRAVEEN</option>
+    <option value="PRAVEEN A">PRAVEEN A</option>
+    <option value="PRERANA A">PRERANA A</option>
+    <option value="PRIYANSH KUMAR">PRIYANSH KUMAR</option>
+    <option value="PRUTHA ARUN VERNEKAR">PRUTHA ARUN VERNEKAR</option>
+    <option value="RAHUL ABROL">RAHUL ABROL</option>
+    <option value="RAHUL CHRISTOPHER LOUIS">RAHUL CHRISTOPHER LOUIS</option>
+    <option value="RAHUL H HINDER">RAHUL H HINDER</option>
+    <option value="RAHUL M">RAHUL M</option>
+    <option value="RAHUL R">RAHUL R</option>
+    <option value="NIMISHA M R">NIMISHA M R</option>
+    <option value="RAJNIKANT KUMAR">RAJNIKANT KUMAR</option>
+    <option value="RAVI K RAWATH">RAVI K RAWATH</option>
+    <option value="RISHABH R HARIT">RISHABH R HARIT</option>
+    <option value="RISHIKANTA WAIKHOM">RISHIKANTA WAIKHOM</option>
+    <option value="ROHAN.R">ROHAN.R</option>
+    <option value="ROHAN S CHAVAN">ROHAN S CHAVAN</option>
+    <option value="ROHIT HUGAR">ROHIT HUGAR</option>
+    <option value="ROHIT SHROFF">ROHIT SHROFF</option>
+    <option value="ROUMIC BHATTACHARJEE">ROUMIC BHATTACHARJEE</option>
+    <option value="S VISHNU VIDYESH">S VISHNU VIDYESH</option>
+    <option value="SAI KIREETI S R">SAI KIREETI S R</option>
+    <option value="SAIVANDANA PRASAD GADIGI">SAIVANDANA PRASAD GADIGI</option>
+    <option value="SAMIKSHA SHARMA">SAMIKSHA SHARMA</option>
+    <option value="SAMRUDH P">SAMRUDH P</option>
+    <option value="SANJANA ANANDA HOSKOTE">SANJANA ANANDA HOSKOTE</option>
+    <option value="SANJAY R">SANJAY R</option>
+    <option value="SANMATHI M">SANMATHI M</option>
+    <option value="SATHVIK S SRIKANTH">SATHVIK S SRIKANTH</option>
+    <option value="SATHYABHUSHAN M N">SATHYABHUSHAN M N</option>
+    <option value="SHAIK FAZLUDDIN">SHAIK FAZLUDDIN</option>
+    <option value="SHAJEE ULLA KHAN">SHAJEE ULLA KHAN</option>
+    <option value="SHAMITHA T">SHAMITHA T</option>
+    <option value="SHANGKHAMITRA N">SHANGKHAMITRA N</option>
+    <option value="SHASHANK S M">SHASHANK S M</option>
+    <option value="SHIVANI SUDHAKAR NAIK">SHIVANI SUDHAKAR NAIK</option>
+    <option value="SHIVARAJ CHATTI">SHIVARAJ CHATTI</option>
+    <option value="SHREEVARDHAN DHANAPAL MANAGAVE">SHREEVARDHAN DHANAPAL MANAGAVE</option>
+    <option value="SHREYA PRABHU">SHREYA PRABHU</option>
+    <option value="SHREYANS JAIN">SHREYANS JAIN</option>
+    <option value="Shreyas S">Shreyas S</option>
+    <option value="SHWETA SURESH KOTE">SHWETA SURESH KOTE</option>
+    <option value="SIDDEGOWDA D">SIDDEGOWDA D</option>
+    <option value="SIDDHARTH MOHAN">SIDDHARTH MOHAN</option>
+    <option value="SINAM AVINASH SINGH">SINAM AVINASH SINGH</option>
+    <option value="SIRIVELA VENKAT SAI CHETAN">SIRIVELA VENKAT SAI CHETAN</option>
+    <option value="SMRITY SINGH">SMRITY SINGH</option>
+    <option value="SNEHA SUNKAD">SNEHA SUNKAD</option>
+    <option value="SOUMYA GOPAL KULHALLI">SOUMYA GOPAL KULHALLI</option>
+    <option value="SOUMYA SHAMBHAVI">SOUMYA SHAMBHAVI</option>
+    <option value="SPOORTHI SRIPAD">SPOORTHI SRIPAD</option>
+    <option value="SREE RANGA ARAVIND">SREE RANGA ARAVIND</option>
+    <option value="SRUSHTI RAGHAVENDRA JOSHI">SRUSHTI RAGHAVENDRA JOSHI</option>
+    <option value="SUDEEP P">SUDEEP P</option>
+    <option value="SUDEEP R">SUDEEP R</option>
+    <option value="SUDHAKARAN R">SUDHAKARAN R</option>
+    <option value="SUHAS H">SUHAS H</option>
+    <option value="SUHAS RN">SUHAS RN</option>
+    <option value="SUJAN H N">SUJAN H N</option>
+    <option value="SUJAY S BHARADWAJ">SUJAY S BHARADWAJ</option>
+    <option value="SUMANT SHEKHAR">SUMANT SHEKHAR</option>
+    <option value="SUPRITH GOWDA S V">SUPRITH GOWDA S V</option>
+    <option value="SYED ABDUL LATEEF">SYED ABDUL LATEEF</option>
+    <option value="SYEDASIFPASHA">SYEDASIFPASHA</option>
+    <option value="T S RAKSHITH">T S RAKSHITH</option>
+    <option value="SANDEEP T">SANDEEP T</option>
+    <option value="TAKHELLAMBAM MORIS SINGH">TAKHELLAMBAM MORIS SINGH</option>
+    <option value="THEJAS D N">THEJAS D N</option>
+    <option value="TEJAS PV">TEJAS PV</option>
+    <option value="TEJASWIN REDDY Y">TEJASWIN REDDY Y</option>
+    <option value="THRUPTHI M">THRUPTHI M</option>
+    <option value="TRISHA I">TRISHA I</option>
+    <option value="UJJWAL RAKESH">UJJWAL RAKESH</option>
+    <option value="UTTAM GOWDA H S">UTTAM GOWDA H S</option>
+    <option value="V MOKSHA JAIN">V MOKSHA JAIN</option>
+    <option value="VADDI DURGA VARA PRASAD">VADDI DURGA VARA PRASAD</option>
+    <option value="VANSH JAIN">VANSH JAIN</option>
+    <option value="VEDANT ACHALKAR">VEDANT ACHALKAR</option>
+    <option value="VIGNESH ARAVIND R">VIGNESH ARAVIND R</option>
+    <option value="VIKRAMADITYA S JAIN">VIKRAMADITYA S JAIN</option>
+    <option value="VINAYAK S SUTAR">VINAYAK S SUTAR</option>
+    <option value="VINAYKUMAR KITLI">VINAYKUMAR KITLI</option>
+    <option value="VISHAL ANUJ S.R">VISHAL ANUJ S.R</option>
+    <option value="VISHVESHA V">VISHVESHA V</option>
+    <option value="T R VISRUAT">T R VISRUAT</option>
+    <option value="VRUSHANK JAGADEESH">VRUSHANK JAGADEESH</option>
+    <option value="ZAHRA REFAATH A.T">ZAHRA REFAATH A.T</option>
+    <option value="DEEKSHITHA REDDY P">DEEKSHITHA REDDY P</option>
+    <option value="MANOJ R / MAJOR ">MANOJ R / MAJOR </option>
+    <option value="SHANTHANU SHIVAKUMAR BALEKAI">SHANTHANU SHIVAKUMAR BALEKAI</option>
+    <option value="AJIT IYENGAR">AJIT IYENGAR</option>
+    <option value="GORUR MOHD RAEES IRFAN">GORUR MOHD RAEES IRFAN</option>
+    <option value="IBRAHIM HUSSAIN">IBRAHIM HUSSAIN</option>
+    <option value="MIRWAIS IBRAHIMKHAIL">MIRWAIS IBRAHIMKHAIL</option>
+    <option value="SHAHIL VERMA">SHAHIL VERMA</option>
+    <option value="SWOYAM  SUBEDI">SWOYAM  SUBEDI</option>
+                        </select>
+
+                    </div>
+                    <div id="civilStu" style="display: none;" class="mb-3">
+                        <label class="form-label" for="candidate">select candidate</label>
+                        <select class="form-control" name="candidate" id="CIVIL">
+                            <option value="" selected disabled>choose one</option>
+                        <%for(let n of civil){%>
+                            <option value="<%=n%>"><%=n%></option>
+                            <%}%>
+                        </select>
+
+
+                    </div>
+                    <div id="isStu" style="display: none;" class="mb-3">
+                        <label for="candidate" class="form-label">select candidate</label>
+                        <select name="candidate" class="form-control" id="IS">
+                        <option value="" selected disabled>choose one</option>
+                        <option value="A SAI KALYAN">A SAI KALYAN</option>
+<option value="ABHAY JHA">ABHAY JHA</option>
+<option value="AJITHKUMAR RAVINDRA SHETTY">AJITHKUMAR RAVINDRA SHETTY</option>
+<option value="ARPAN BHUSAL">ARPAN BHUSAL</option>
+<option value="AADARSH KUMAR KESHARI">AADARSH KUMAR KESHARI</option>
+<option value="AAKASH A">AAKASH A</option>
+<option value="AARON PRINCE NELSON MATHEWS">AARON PRINCE NELSON MATHEWS</option>
+<option value="ADARSHA DALAVAI S M">ADARSHA DALAVAI S M</option>
+<option value="ADITHYA ADIGA">ADITHYA ADIGA</option>
+<option value="ADITI SRINIVAS">ADITI SRINIVAS</option>
+<option value="ADITI SANKARANARAYANAN">ADITI SANKARANARAYANAN</option>
+<option value="ADNAN MOHAMMED">ADNAN MOHAMMED</option>
+<option value="AEDEN GEO THOMAS">AEDEN GEO THOMAS</option>
+<option value="AKSHAY SHARDA">AKSHAY SHARDA</option>
+<option value="ANIRUDDHA RAO">ANIRUDDHA RAO</option>
+<option value="ANIRUDH ANANTH PRABHU">ANIRUDH ANANTH PRABHU</option>
+<option value="ANIRUDHA BHAT">ANIRUDHA BHAT</option>
+<option value="ANMOL KUMAR SINGH">ANMOL KUMAR SINGH</option>
+<option value="ANUJ HOSLOK">ANUJ HOSLOK</option>
+<option value="ARIBAH KHAN">ARIBAH KHAN</option>
+<option value="DEEKSHA C">DEEKSHA C</option>
+<option value="DHANUSH JOGI K">DHANUSH JOGI K</option>
+<option value="EESHAN MATTEY">EESHAN MATTEY</option>
+<option value="ESHAAN SINGH">ESHAAN SINGH</option>
+<option value="FAHAD KHAN">FAHAD KHAN</option>
+<option value="GAGAN V S">GAGAN V S</option>
+<option value="GAGANDEEP N K">GAGANDEEP N K</option>
+<option value="GAGAN M">GAGAN M</option>
+<option value="GAURAV V">GAURAV V</option>
+<option value="HAVISH.K.G">HAVISH.K.G</option>
+<option value="HEMANTH PAI">HEMANTH PAI</option>
+<option value="HRISHIKESH PRAHALAD">HRISHIKESH PRAHALAD</option>
+<option value="IBRAHIM JAVEED KHAN">IBRAHIM JAVEED KHAN</option>
+<option value="JAIDEEP SABHARWAL">JAIDEEP SABHARWAL</option>
+<option value="K B MOULYA">K B MOULYA</option>
+<option value="K MAHANTH">K MAHANTH</option>
+<option value="KAVANA N MURTHY">KAVANA N MURTHY</option>
+<option value="KASHISH GANDHI">KASHISH GANDHI</option>
+<option value="KAUSTHUBH K">KAUSTHUBH K</option>
+<option value="KAVANA RAMANANDA HEGDE">KAVANA RAMANANDA HEGDE</option>
+<option value="KOUSHIK S">KOUSHIK S</option>
+<option value="KRISHNA B N">KRISHNA B N</option>
+<option value="KSHAMA BHATT">KSHAMA BHATT</option>
+<option value="KUMAR ADITYA S R">KUMAR ADITYA S R</option>
+<option value="KUSUMITHA A">KUSUMITHA A</option>
+<option value="LINGADALLI SRI VAISHNAVI">LINGADALLI SRI VAISHNAVI</option>
+<option value="MAHARSHI REDDY">MAHARSHI REDDY</option>
+<option value="MARGASHI KHADKA">MARGASHI KHADKA</option>
+<option value="MOINUDDIN HASSAN">MOINUDDIN HASSAN</option>
+<option value="MUGDHA BADORE">MUGDHA BADORE</option>
+<option value="MUHIGABUNTU RIGAUD">MUHIGABUNTU RIGAUD</option>
+<option value="NANDAN HEGDE">NANDAN HEGDE</option>
+<option value="NANDITHA B SATISH">NANDITHA B SATISH</option>
+<option value="NAVODITH V BHAT">NAVODITH V BHAT</option>
+<option value="NIRANJAN S NAIK">NIRANJAN S NAIK</option>
+<option value="OM KATKAM">OM KATKAM</option>
+<option value="PRUTHVI ARUN UCHGAONKAR">PRUTHVI ARUN UCHGAONKAR</option>
+<option value="PURNESH N">PURNESH N</option>
+<option value="PAVAN DESHPANDE">PAVAN DESHPANDE</option>
+<option value="SHRADDHA Y L">SHRADDHA Y L</option>
+<option value="SHREYAS SHETTY">SHREYAS SHETTY</option>
+<option value="SUMANTH N">SUMANTH N</option>
+<option value="ABHAY YELSANGIKER">ABHAY YELSANGIKER</option>
+<option value="ABIJIT M">ABIJIT M</option>
+<option value="ADITYA S">ADITYA S</option>
+<option value="POOJA SHRESTHA">POOJA SHRESTHA</option>
+<option value="PRAJWAL MANJUNATH">PRAJWAL MANJUNATH</option>
+<option value="PRAJWAL G ALEWOOR">PRAJWAL G ALEWOOR</option>
+<option value="PRANAV KASHYAP P N">PRANAV KASHYAP P N</option>
+<option value="PRASHAMAN POKHAREL">PRASHAMAN POKHAREL</option>
+<option value="RANJINI RAVI IYER">RANJINI RAVI IYER</option>
+<option value="RITHIK A">RITHIK A</option>
+<option value="RACHANA S">RACHANA S</option>
+<option value="RAHUL T G">RAHUL T G</option>
+<option value="RAKESH R">RAKESH R</option>
+<option value="RAKSHITH S">RAKSHITH S</option>
+<option value="RASHA FERAS ALHEREK">RASHA FERAS ALHEREK</option>
+<option value="RAVI B PRAKASH">RAVI B PRAKASH</option>
+<option value="ROHIT DB">ROHIT DB</option>
+<option value="RUPALINA SINHA">RUPALINA SINHA</option>
+<option value="RUSHIL M S">RUSHIL M S</option>
+<option value="S SREE RACHNAE">S SREE RACHNAE</option>
+<option value="SAHITHI RAJASEKARAN">SAHITHI RAJASEKARAN</option>
+<option value="SHONIMA P">SHONIMA P</option>
+<option value="SPOORTHY.B.H.">SPOORTHY.B.H.</option>
+<option value="STEFAN DSOUZA">STEFAN DSOUZA</option>
+<option value="SUHAS KUMAR J N">SUHAS KUMAR J N</option>
+<option value="SUYASH KUMAR NEPAL">SUYASH KUMAR NEPAL</option>
+<option value="SYED RAJIBUL">SYED RAJIBUL</option>
+<option value="SAKETH B S">SAKETH B S</option>
+<option value="SAMARTH S">SAMARTH S</option>
+<option value="SANKALP FATTEPUR">SANKALP FATTEPUR</option>
+<option value="SHAGUN N SHETTY">SHAGUN N SHETTY</option>
+<option value="SHAMBAVI">SHAMBAVI</option>
+<option value="SHASHANK M">SHASHANK M</option>
+<option value="SHASHANK S">SHASHANK S</option>
+<option value="SHASHI RANJAN SINGH">SHASHI RANJAN SINGH</option>
+<option value="SHEETAL S CHAKRAVARTHY">SHEETAL S CHAKRAVARTHY</option>
+<option value="SHREYA K C">SHREYA K C</option>
+<option value="SHREYANSH TRIPATHI">SHREYANSH TRIPATHI</option>
+<option value="SIDDARTH J JALIGIDAD">SIDDARTH J JALIGIDAD</option>
+<option value="SOUMYARANI S HAGARGI">SOUMYARANI S HAGARGI</option>
+<option value="SOURABH PRATHVIRAJ HIREMATH">SOURABH PRATHVIRAJ HIREMATH</option>
+<option value="SUDHANVA G V">SUDHANVA G V</option>
+<option value="SUHAS R NAYAK">SUHAS R NAYAK</option>
+<option value="SUMUKH RAJANIKANTH KASHI">SUMUKH RAJANIKANTH KASHI</option>
+<option value="SUSHANT KHANAL">SUSHANT KHANAL</option>
+<option value="TANVI ADHIKARI">TANVI ADHIKARI</option>
+<option value="V S SUSHANT">V S SUSHANT</option>
+<option value="VADDI YASWANTH">VADDI YASWANTH</option>
+<option value="VARSHA S">VARSHA S</option>
+<option value="VASUDEV">VASUDEV</option>
+<option value="VAIBHAV C M">VAIBHAV C M</option>
+<option value="VENKATESH. N. P">VENKATESH. N. P</option>
+<option value="VIDHYA M HEGDE">VIDHYA M HEGDE</option>
+<option value="VINEETH H R">VINEETH H R</option>
+<option value="VIRAJ BHAT">VIRAJ BHAT</option>
+<option value="VISHAL P">VISHAL P</option>
+<option value="YASHAS SURENDRA">YASHAS SURENDRA</option>
+<option value="YASSER KHAN">YASSER KHAN</option>
+<option value="ABDUL HADI">ABDUL HADI</option>
+<option value="AMOGH VINAY NADKARNI">AMOGH VINAY NADKARNI</option>
+<option value="DHARAN PRAMOD K NAZARE">DHARAN PRAMOD K NAZARE</option>
+<option value="GAURI KARTHIKA H S">GAURI KARTHIKA H S</option>
+<option value="R C THIMMAREDDY">R C THIMMAREDDY</option>
+<option value="YATHISH CHANDRASHEKAR">YATHISH CHANDRASHEKAR</option>
+<option value="CHAITRA">CHAITRA</option>
+<option value="IKCHIT NAGPAL">IKCHIT NAGPAL</option>
+<option value="JATIN MECHOO">JATIN MECHOO</option>
+<option value="H SRUJAN KUMAR">H SRUJAN KUMAR</option>
+<option value="HARSHITH J RAJ">HARSHITH J RAJ</option>
+<option value="LEKHA G PATEL">LEKHA G PATEL</option>
+<option value="LIKHITH RAJ A">LIKHITH RAJ A</option>
+<option value="MANGALAM MOONDRA">MANGALAM MOONDRA</option>
+<option value="NAKUL SIDDARTH">NAKUL SIDDARTH</option>
+<option value="PANCHAMI.M">PANCHAMI.M</option>
+<option value="PRAGATHI YELLESPUR PRASANNA">PRAGATHI YELLESPUR PRASANNA</option>
+<option value="PRANAV DEEPAK">PRANAV DEEPAK</option>
+<option value="RAJ ARYAN">RAJ ARYAN</option>
+<option value="RANJAN KARTHIKEYAN">RANJAN KARTHIKEYAN</option>
+<option value="S PRAJWAL">S PRAJWAL</option>
+<option value="SWAYAM KOTRE">SWAYAM KOTRE</option>
+<option value="SHAIK ROSHAN ZAMEER">SHAIK ROSHAN ZAMEER</option>
+<option value="SHANKAR CHAVAN">SHANKAR CHAVAN</option>
+<option value="SHARAN M A">SHARAN M A</option>
+<option value="SHRENIK PURVANT">SHRENIK PURVANT</option>
+<option value="SHUDHANSHU RANJAN SINGH">SHUDHANSHU RANJAN SINGH</option>
+<option value="SRIRAM BHAT">SRIRAM BHAT</option>
+<option value="TEJAS M">TEJAS M</option>
+<option value="VARSHA.M">VARSHA.M</option>
+<option value="VEDA C R">VEDA C R</option>
+<option value="SANDESH BHATT">SANDESH BHATT</option>
+<option value="PARIKSHITH J">PARIKSHITH J</option>
+<option value="KEERTHANA K">KEERTHANA K</option>
+<option value="KASHISH AGARWAL">KASHISH AGARWAL</option>
+<option value="DEEKSHA.P">DEEKSHA.P</option>
+<option value="NAVEETH KUMAR L">NAVEETH KUMAR L</option>
+<option value="AKSHAT PANDEY">AKSHAT PANDEY</option>
+<option value="ANANYA H A">ANANYA H A</option>
+<option value="D MANVITH REDDY">D MANVITH REDDY</option>
+<option value="HARSH PARIHAR">HARSH PARIHAR</option>
+<option value="HEMESH GOWDA S">HEMESH GOWDA S</option>
+<option value="LALAM AAKASH">LALAM AAKASH</option>
+<option value="M ABHAY CHARAN">M ABHAY CHARAN</option>
+<option value="NANDAN PAI">NANDAN PAI</option>
+<option value="PRANAV TIPPIMATH">PRANAV TIPPIMATH</option>
+<option value="RAGHAV INANI">RAGHAV INANI</option>
+<option value="SINCHANA A">SINCHANA A</option>
+<option value="UMAR CHOWDHRY">UMAR CHOWDHRY</option>
+<option value="UTKARSH GUPTA">UTKARSH GUPTA</option>
+<option value="PRAJWAL D">PRAJWAL D</option>
+<option value="SHARAN L">SHARAN L</option>
+<option value="VISHWAJEETH NARAYANA A">VISHWAJEETH NARAYANA A</option>
+<option value="AAYUSH SAMEER PARIKH">AAYUSH SAMEER PARIKH</option>
+<option value="ADARSH SINGH">ADARSH SINGH</option>
+<option value="ARYAMAAN RAJ">ARYAMAAN RAJ</option>
+<option value="R ROHAN">R ROHAN</option>
+<option value="R ROHITH">R ROHITH</option>
+<option value="R SRIKAR">R SRIKAR</option>
+<option value="SHASHANK GOUD CHIGATE">SHASHANK GOUD CHIGATE</option>
+<option value="SNEHIL GUPTA">SNEHIL GUPTA</option>
+<option value="TUSHAR LOHIA">TUSHAR LOHIA</option>
+<option value="VIGNESH J R">VIGNESH J R</option>
+<option value="VINAYAK DUBEY">VINAYAK DUBEY</option>
+<option value="VISHWAJEET NARAYAN">VISHWAJEET NARAYAN</option>
+<option value="YASH SINGH">YASH SINGH</option>
+<option value="PRAJWANEEL VINAYAK B M">PRAJWANEEL VINAYAK B M</option>
+<option value="NIYATI AGRAWAL">NIYATI AGRAWAL</option>
+<option value="KHUSHI AGRAWAL">KHUSHI AGRAWAL</option>
+<option value="MONITESH SEN">MONITESH SEN</option>
+<option value="AAYUSH LAL">AAYUSH LAL</option>
+<option value="NAVANEETH PAI V">NAVANEETH PAI V</option>
+<option value="AYUSH KATIYAR">AYUSH KATIYAR</</option>
+<option value="DIYA SHETTY">DIYA SHETTY</</option>
+<option value="GAURAVESH SHARMA">GAURAVESH SHARMA</</option>
+<option value="HARSH SINGH">HARSH SINGH</</option>
+<option value="JINESH JAIN">JINESH JAIN</</option>
+<option value="JYOTHSNA R">JYOTHSNA R</</option>
+<option value="KARTIKEYA MISHRA">KARTIKEYA MISHRA</</option>
+<option value="NAKSHA D">NAKSHA D</</option>
+<option value="NEVYA KHANDELWAL">NEVYA KHANDELWAL</</option>
+<option value="NITYA SEETARAMAN">NITYA SEETARAMAN</</option>
+<option value="RAJ SINGHANIA">RAJ SINGHANIA</</option>
+<option value="RITIK SINGH">RITIK SINGH</</option>
+<option value="SARTHAK JAISWAL">SARTHAK JAISWAL</</option>
+<option value="SHIVAM SISODIA">SHIVAM SISODIA</</option>
+<option value="TANYA JHA">TANYA JHA</</option>
+<option value="GUDOOR LAXMI SHARANAPPA">GUDOOR LAXMI SHARANAPPA</</option>
+<option value="ANVITA PRAMOD BODHALE">ANVITA PRAMOD BODHALE</</option>
+<option value="BODDULA VIGNESH">BODDULA VIGNESH</</option>
+<option value="HARSHIT KUMAR GUPTA">HARSHIT KUMAR GUPTA</</option>
+<option value="JHANAVI L">JHANAVI L</</option>
+<option value="KIRTI CHETWANI">KIRTI CHETWANI</</option>
+<option value="KUSHAL KUMAR POTTA">KUSHAL KUMAR POTTA</</option>
+<option value="SAIYAM JAIN">SAIYAM JAIN</</option>
+<option value="THAKKAR SUMIT JAYESHBHAI">THAKKAR SUMIT JAYESHBHAI</</option>
+<option value="ZEEL KALPESHKUMAR PATEL">ZEEL KALPESHKUMAR PATEL</</option>
+<option value="Anagha Prasanna Krishna">Anagha Prasanna Krishna</</option>
+<option value="Fiza Shalam">Fiza Shalam</</option>
+<option value="Harsh Kumar">Harsh Kumar</</option>
+<option value="Pavankumar Uppar">Pavankumar Uppar</</option>
+<option value="Prabhat Gurappa Pyatigoudar">Prabhat Gurappa Pyatigoudar</</option>
+<option value="Rittik Roshan">Rittik Roshan</</option>
+<option value="Sai Krishna Manoj Alapati">Sai Krishna Manoj Alapati</</option>
+
+
+
+                        </select>
+
+                    </div>
+                </section>
+
+                <div class="mb-3">
+                    <label class="form-label" for="comment">Add a comment</label>
+                    <textarea class="form-control" name="comment" id="comment" cols="30" rows="5"
+                        placeholder="Any kind of abuse or defaming is strictly prohibited"></textarea>
+
+                </div>
+                <div class="mb-3">
+
+                    <button class="btn btn-success">Vote</button>
+
+                </div>
+                
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var sec;
+
+        function setSection() {
+
+            sec = document.getElementById('branch').value;
+
+
+
+
+            if (sec === 'CSE') {
+                document.getElementById('cseStu').style.display = 'inline';
+                document.getElementById('eceStu').style.display = 'none';
+                document.getElementById('civilStu').style.display = 'none';
+                document.getElementById('isStu').style.display = 'none';
+
+
+
+
+
+
+            }
+            else if (sec === 'ECE') {
+                document.getElementById('cseStu').style.display = 'none';
+                document.getElementById('eceStu').style.display = 'inline';
+                document.getElementById('civilStu').style.display = 'none';
+                document.getElementById('isStu').style.display = 'none';
+
+
+
+            }
+            else if (sec === 'CIVIL') {
+
+                document.getElementById('cseStu').style.display = 'none';
+                document.getElementById('eceStu').style.display = 'none';
+                document.getElementById('civilStu').style.display = 'inline';
+                document.getElementById('isStu').style.display = 'none';
+
+            }
+            else if (sec === 'IS') {
+
+                document.getElementById('cseStu').style.display = 'none';
+                document.getElementById('eceStu').style.display = 'none';
+                document.getElementById('civilStu').style.display = 'none';
+                document.getElementById('isStu').style.display = 'inline';
+
+
+            }
+            else {
+                document.querySelectorAll('div').style.display = 'none';
+
+            }
+
+
+        }
+    </script>
